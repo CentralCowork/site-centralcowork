@@ -10223,4 +10223,70 @@ table.table .na {
   margin-top: 10rem;
 }
 
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+.slider {
+  display: block;
+  height: 350px;
+  width: 900px;
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+}
+
+.slider li {
+  list-style: none;
+  position: absolute;
+}
+
+.slider img {
+  margin: auto;
+  height: 283px;
+  width: 283px;
+  vertical-align: top;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slider input {
+  display: none;
+}
+
+.slider label {
+  background-color: #D3D3D3;
+  bottom: 10px;
+  cursor: pointer;
+  display: block;
+  border-radius: 5px;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  z-index: 10;
+}
+
+.slider li:nth-child(1) label {
+  left: 42.5%;
+}
+
+.slider li:nth-child(2) label {
+  left: 47.5%;
+}
+
+.slider li:nth-child(3) label {
+  left: 52.5%;
+}
+
+.slider li:nth-child(4) label {
+  left: 57.5%;
+}
+
+
+.slider li input:checked ~ img {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
 /*# sourceMappingURL=main.css.map */
