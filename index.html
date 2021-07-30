@@ -54,6 +54,10 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '2621881664734268');
       fbq('track', 'PageView');
+
+
+
+
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=2621881664734268&ev=PageView&noscript=1"
@@ -204,7 +208,38 @@
             </div>
         </div>
     </div>
+    <h2 style="text-align: center;">Nossos Clientes</h2>
 
+    <div id="slider">
+      <a href="#" class="control_next">></a>
+      <a href="#" class="control_prev"><</a>
+      <ul>
+        <li>
+          <img src="dist/images/logos-clientes/Editora.png" />
+          <img src="dist/images/logos-clientes/Aplicar.png" />
+          <img src="dist/images/logos-clientes/Avell.png" />
+    </li>
+    <li>
+          <img src="dist/images/logos-clientes/IFPC.png" />
+          <img src="dist/images/logos-clientes/Prudêncio-Negócios-Imobiliarios.png" />
+          <img src="dist/images/logos-clientes/PX.png" />
+    </li>
+    <li>
+          <img src="dist/images/logos-clientes/Ricardo.png" />
+          <img src="dist/images/logos-clientes/Santa-Fé.png" />
+          <img src="dist/images/logos-clientes/Signia.png" />
+    </li>
+    <li>
+          <img src="dist/images/logos-clientes/Studio.png" />
+          <img src="dist/images/logos-clientes/VFX.png" />
+          <img src="dist/images/logos-clientes/Yab.png" />
+    </li>
+      </ul>  
+    </div>
+      
+
+    <br>
+    <br>
     <section id="contato">
       <div class="container">
         <div class="row justify-content-center">
@@ -238,37 +273,6 @@
             </form>
           </div>
         </div>
-
-        <ul class="slider">
-          <li>
-                <input type="radio" id="slide1" name="slide" checked>
-                <label for="slide1"></label>
-                <img src="dist/images/logos-clientes/Editora.png" />
-                <img src="dist/images/logos-clientes/Aplicar.png" />
-                <img src="dist/images/logos-clientes/Avell.png" />
-          </li>
-          <li>
-                <input type="radio" id="slide2" name="slide">
-                <label for="slide2"></label>
-                <img src="dist/images/logos-clientes/IFPC.png" />
-                <img src="dist/images/logos-clientes/Prudêncio-Negócios-Imobiliarios.png" />
-                <img src="dist/images/logos-clientes/PX.png" />
-          </li>
-          <li>
-                <input type="radio" id="slide3" name="slide">
-                <label for="slide3"></label>
-                <img src="dist/images/logos-clientes/Ricardo.png" />
-                <img src="dist/images/logos-clientes/Santa-Fé.png" />
-                <img src="dist/images/logos-clientes/Signia.png" />
-          </li>
-          <li>
-            <input type="radio" id="slide4" name="slide">
-            <label for="slide4"></label>
-            <img src="dist/images/logos-clientes/Studio.png" />
-            <img src="dist/images/logos-clientes/VFX.png" />
-            <img src="dist/images/logos-clientes/Yab.png" />
-      </li>
-        </ul>
       </div>
     </section>
 
@@ -360,4 +364,36 @@
         <script src="dist/js/main.min.js"></script>
 
 </body>
+
+
+<script>
+jQuery(document).ready(function ($) {
+
+  setInterval(function () {
+      moveRight();
+  }, 3000);
+
+var slideCount = $('#slider ul li').length;
+var slideWidth = $('#slider ul li').width();
+var slideHeight = $('#slider ul li').height();
+var sliderUlWidth = slideCount * slideWidth;
+
+$('#slider').css({ width: slideWidth, height: slideHeight });
+
+$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+$('#slider ul li:last-child').prependTo('#slider ul');
+
+  function moveRight() {
+      $('#slider ul').animate({
+          left: - slideWidth
+      }, 200, function () {
+          $('#slider ul li:first-child').appendTo('#slider ul');
+          $('#slider ul').css('left', '');
+      });
+  };
+});    
+
+</script>
+
 </html>
