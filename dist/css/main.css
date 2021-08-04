@@ -10255,6 +10255,13 @@ table.table .na {
   line-height: 300px;
 }
 
+@media screen and (max-width: 600px) {
+  #slider ul li {
+  width: 300px !important;
+  height: 900px !important;
+  }
+}  
+
 #slider ul li img{
   width: 250px;
   height: 250px;
